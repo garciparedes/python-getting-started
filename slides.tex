@@ -1,0 +1,46 @@
+\documentclass{beamer}
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage[utf8]{inputenc}
+\usepackage[
+  english,
+  spanish,
+  es-tabla,
+  es-nodecimaldot
+]{babel}
+\selectlanguage{spanish}
+\usepackage{minted}
+\setminted[python]{frame=single,autogobble,linenos,numbersep=4pt,fontsize=\footnotesize}
+
+\usetheme{Rochester}
+\definecolor{pinky}{rgb}{0.9098, 0.2627, 0.4431} % UBC Blue (primary)
+\usecolortheme[named=pinky]{structure}
+
+\title{¡Comenzando con Python!}
+\author{Sergio García Prado}
+\date{\today}
+
+\begin{document}
+
+    \begin{frame}
+        \titlepage
+    \end{frame}
+
+    \begin{frame}{Sample frame title}
+        This is a text in the first frame.
+    \end{frame}
+
+    \begin{frame}[fragile]{Python Sample}
+        This is a text in the first frame.
+        \begin{figure}
+            \begin{minted}{python}
+                def main():
+                  print("hello")
+
+                if __name__ == '__main__':
+                  main()
+            \end{minted}
+        \end{figure}
+
+    \end{frame}
+\end{document}
