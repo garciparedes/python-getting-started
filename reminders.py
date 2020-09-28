@@ -2,7 +2,6 @@ from time import sleep, time
 
 
 def main():
-
     reminders = list()
     while True:
         command = input()
@@ -16,10 +15,10 @@ def main():
         elif command == "a":
             message = input("What to reminder? --> ")
             seconds = round(time()) + int(input("How many seconds? --> "))
-            print(f"Created Reminder!")
+            reminder = [False, seconds, message]
+            reminders.append(reminder)
+            print(f"Created a reminder: {reminder}")
             print()
-
-            reminders.append([False, seconds, message])
         elif command == "s":
             print("Remainders:")
             print("\tCompleted\tRemaining\tMessage")

@@ -13,7 +13,7 @@
 ]{babel}
 \selectlanguage{spanish}
 \usepackage{minted}
-\setminted[python]{frame=single,autogobble,linenos,numbersep=4pt,fontsize=\footnotesize}
+\setminted[python]{frame=single,autogobble,linenos,numbersep=4pt,fontsize=\tiny}
 
 \usetheme{Rochester}
 \definecolor{pinky}{rgb}{0.9098, 0.2627, 0.4431}
@@ -42,12 +42,12 @@
             \item ¡Hola! Soy Sergio García Prado
             \item Estudios:
             \begin{itemize}
-              \item \emoji{desktop-computer} Graduado en Ingeniería Informática
-              \item \emoji{chart-increasing} Graduado en Estadística
+              \item [\emoji{desktop-computer}] Graduado en Ingeniería Informática
+              \item [\emoji{chart-increasing}] Graduado en Estadística
             \end{itemize}
             \item Experiencia Laboral:
             \begin{itemize}
-              \item \emoji{rocket} Trabajando en Unlimiteck
+              \item [\emoji{rocket}] Trabajando en Unlimiteck
             \end{itemize}
             \item Sígueme:
                 \begin{itemize}
@@ -83,7 +83,7 @@
         \end{minipage}
         \begin{minipage}{.69\textwidth}
             \begin{itemize}
-                \item La idea de programar sobre un ordenador no es muy diferente de la tareas como la de seguir una receta.
+                \item La idea de programar sobre un ordenador no es muy diferente de tareas como la de seguir una receta.
                 \item Receta de Bizcocho:
                 \begin{enumerate}
                     \item Mezclar ingredientes secos.
@@ -145,11 +145,16 @@
         \end{minipage}
     \end{frame}
 
-    \begin{frame}{Caso Práctico: Recordatorios}
+    \begin{frame}{Caso Práctico: Recordatorios (I)}
         \noindent
         \begin{minipage}{.69\textwidth}
           \begin{itemize}
-            \item [TODO]
+            \item Para ejemplificar cómo usar \emph{Python} así como sus intrucciones básicas se propone construir una aplicación básica de recordatorios.
+            \item Por motivos de simplicidad, por el momento la aplicación permitirá únicamente las siguientes historias de usuario:
+              \begin{itemize}
+                \item Añadir nuevos recordatorios.
+                \item Listar recordatorios existentes.
+              \end{itemize}
           \end{itemize}
         \end{minipage}
         \begin{minipage}{.29\textwidth}
@@ -160,21 +165,99 @@
         \end{minipage}
     \end{frame}
 
-    \begin{frame}[fragile]{Python Sample}
+    \begin{frame}[fragile]{Caso Práctico: Recordatorios (II)}
         This is a text in the first frame.
         \begin{figure}
             \begin{minipage}[c]{0.7\textwidth}
                 \begin{minted}{python}
-                    def main():
-                      print("hello")
-
-                    if __name__ == '__main__':
-                      main()
+                    message = input("What to reminder? --> ")
+                    seconds = int(input("How many seconds? --> "))
+                    reminder = [False, seconds, message]
+                    print(f"Created a reminder: {reminder}")
                 \end{minted}
             \end{minipage}
         \end{figure}
     \end{frame}
 
+
+    \begin{frame}[fragile]{Caso Práctico: Recordatorios (II)}
+        This is a text in the first frame.
+        \begin{figure}
+            \begin{minipage}[c]{0.7\textwidth}
+                \begin{minted}{python}
+                    reminders = list()
+                    reminders.append(reminder)
+                \end{minted}
+            \end{minipage}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}[fragile]{Caso Práctico: Recordatorios (II)}
+        This is a text in the first frame.
+        \begin{figure}
+            \begin{minipage}[c]{0.7\textwidth}
+                \begin{minted}{python}
+                      print("Remainders:")
+                      print("\tCompleted\tRemaining\tMessage")
+                      for reminder in reminders:
+                          print(f"\t{reminder[0]:>8}\t{reminder[1]:>9}\t{reminder[2]}")
+                \end{minted}
+            \end{minipage}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}[fragile]{Caso Práctico: Recordatorios (II)}
+        This is a text in the first frame.
+        \begin{figure}
+            \begin{minipage}[c]{0.7\textwidth}
+                \begin{minted}{python}
+                    while True:
+                        command = input()
+                        if command == "q":
+                            break
+                        elif command == "a":
+                            ...
+                        elif command == "s":
+                            ...
+                \end{minted}
+            \end{minipage}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}[fragile]{Python Sample}
+        This is a text in the first frame.
+        \begin{figure}
+            \begin{minipage}[c]{\textwidth}
+                \begin{minted}{python}
+                reminders = list()
+                while True:
+                    command = input()
+                    for reminder in reminders:
+                        if reminder[1] - time() >= 0:
+                            break
+                        reminder[0] = True
+                    reminders.sort()
+                    if command == "q":
+                        break
+                    elif command == "a":
+                        message = input("What to reminder? --> ")
+                        seconds = round(time()) + int(input("How many seconds? --> "))
+                        reminder = [False, seconds, message]
+                        reminders.append(reminder)
+                        print(f"Created a reminder: {reminder}")
+                        print()
+                    elif command == "s":
+                        print("Remainders:")
+                        print("\tCompleted\tRemaining\tMessage")
+                        for reminder in reminders:
+                            print(f"\t{reminder[0]}\t\t{reminder[1] - round(time()):>9}\t{reminder[2]}")
+                        print()
+
+                    sleep(0.5)
+                \end{minted}
+            \end{minipage}
+        \end{figure}
+    \end{frame}
 
     \begin{frame}
         \begin{center}
