@@ -13,7 +13,7 @@
 ]{babel}
 \selectlanguage{spanish}
 \usepackage{minted}
-\setminted[python]{frame=single,autogobble,linenos,numbersep=4pt,fontsize=\tiny}
+\setminted[python]{frame=single,autogobble,linenos,numbersep=4pt}
 
 \usetheme{Rochester}
 \definecolor{pinky}{rgb}{0.9098, 0.2627, 0.4431}
@@ -47,19 +47,20 @@
             \end{itemize}
             \item Experiencia Laboral:
             \begin{itemize}
-              \item [\emoji{rocket}] Trabajando en Unlimiteck
+              \item [\emoji{rocket}] Software Engineer/ Data Scientist en Unlimiteck
             \end{itemize}
             \item Sígueme:
                 \begin{itemize}
+                    \item Mail: \href{mailto:sergio@garcipardes.me}{sergio@garcipardes.me}
                     \item Website: \href{http://garciparedes.me}{garciparedes.me}
                     \item GitHub: \href{http://github.com/garciparedes}{@garciparedes}
-                    \item Email: \href{mailto:sergio@garcipardes.me}{sergio@garcipardes.me}
+                    \item LinkedIn: \href{https://www.linkedin.com/in/garciparedes/}{Sergio García Prado}
                 \end{itemize}
           \end{itemize}
       \end{minipage}
     \end{frame}
 
-    \begin{frame}{¿Qué es programar?}
+    \begin{frame}{¿En qué consiste la programación?}
       \noindent
       \begin{minipage}{.69\textwidth}
           \say{La programación es el proceso utilizado para idear y ordenar las acciones necesarias para realizar un proyecto, preparar ciertas máquinas o aparatos para que empiecen a funcionar en el momento y en la forma deseados o elaborar programas para su empleo en computadoras}
@@ -98,9 +99,9 @@
         \end{minipage}
     \end{frame}
 
-    \begin{frame}{Pensamiento jerárquico: desde arriba hasta abajo}
+    \begin{frame}{Pensamiento jerárquico}
         \begin{itemize}
-          \item La idea de la programación se basa en la construcción de abstracciones sobre conceptos básicos, que de manera conjunta forman una base de conocimiento más rica.
+          \item El mundo de la programación se cimienta sobre la construcción de abstracciones sobre conceptos básicos, que de manera conjunta forman una base de conocimiento más rica.
           \item Ejemplo:
           \begin{itemize}
             \item Hacer bizcocho
@@ -129,7 +130,7 @@
       \end{minipage}
     \end{frame}
 
-    \begin{frame}{¿Por qué Python es popular?}
+    \begin{frame}{¿Por qué Python?}
         \noindent
         \begin{minipage}{.29\textwidth}
             \begin{center}
@@ -143,6 +144,125 @@
             \item En los últimos años ha sufrido un crecimiento exponencial, entre otros, por el ecosistema de tan heterogéneo que se ha ido construyendo a su alrededor: \emph{Data Science}, \emph{Web Development}, \emph{Embedded Systems}, etc.
           \end{itemize}
         \end{minipage}
+    \end{frame}
+
+    \begin{frame}{Conceptos básicos: Variables}
+        \begin{itemize}
+            \item El concepto más básico e importante para aprender a programar es el de \emph{variable}.
+            \item Una variable consiste en un identificador a partir del cual se puede acceder a la información que este tiene asignada.
+            \item En \emph{Python}, se puede asignar información a una variable de la siguiente forma: \mintinline{python}{variable = expression}
+            \begin{itemize}
+                \item \emph{variable} representa el identificador.
+                \item \emph{expression} representa la información que contiene la variable.
+            \end{itemize}
+            \item Ejemplos:
+            \begin{itemize}
+                \item \mintinline{python}{x = 3}
+                \item \mintinline{python}{y = "Hello"}
+                \item \mintinline{python}{x = y}
+                \item \mintinline{python}{z = [x, y]}
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Conceptos básicos: Tipos de Datos}
+        \begin{itemize}
+            \item Las variables tienen asociado un determinado tipo.
+            \item En \emph{Python} este puede cambiar a lo largo de la ejecución (\emph{tipado dinámico}).
+            \item Existe un valor especial para indicar que la variable no contiene ningún valor (y por tanto tampoco tipo) denominado \mintinline{python}{None}.
+            \item Algunos de los tipos más populares son los siguientes:
+            \begin{itemize}
+                \item Texto (\mintinline{python}{str}): \mintinline{python}{x = "Hello!"}
+                \item Enteros (\mintinline{python}{int}): \mintinline{python}{x = 56}
+                \item Decimales (\mintinline{python}{float}): \mintinline{python}{x = -3.14}
+                \item Booleanos (\mintinline{python}{bool}): \mintinline{python}{x = True}
+                \item Listas (\mintinline{python}{list}): \mintinline{python}{x = [1, None, 2, "Hello", False]}
+                \item Diccionarios (\mintinline{python}{dict}): \mintinline{python}{x = {"a": 1, "b": 3, None: False}}
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Conceptos básicos: Operaciones Básicas}
+        \begin{itemize}
+            \item La siguiente característica de las variables es que estas poseen operaciones que modifican su estado (de manera individual o conjunta).
+            \item Dichas operaciones dependen del tipo de información que estas contengan.
+            \item Algunos ejemplos:
+            \begin{itemize}
+                \item Suma (\mintinline{python}{int, float, str, list}): \mintinline{python}{z = x + y}
+                \item Multiplicación (\mintinline{python}{int, float, str, list}): \mintinline{python}{z = x * y}
+                \item Igualdad (\mintinline{python}{object}): \mintinline{python}{z = (x == y)}
+                \item Negación (\mintinline{python}{bool}): \mintinline{python}{y = not x}
+                \item Adicción (\mintinline{python}{list}): \mintinline{python}{x.append(y)}
+                \item Lectura (\mintinline{python}{dict}): \mintinline{python}{x["a"]}
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{Conceptos básicos: Condicionales}
+        \begin{itemize}
+          \item Además de las operaciones entre variables, existen situaciones en que es necesario tomar decisiones diferentes dependiendo de una determinada condición, lo cual se traduce en la ejecución de diferentes sentencias de código.
+          \item Para ello, se utilizan sentencias \mintinline{python}{if} - \mintinline{python}{elif} - \mintinline{python}{else} de la siguiente forma:
+
+          \begin{figure}
+              \begin{minipage}[c]{0.5\textwidth}
+                  \begin{minted}[fontsize=\tiny]{python}
+                      if condition1:
+                        ...
+                      elif condition2:
+                        ...
+                      ...
+                      else:
+                        ...
+                  \end{minted}
+              \end{minipage}
+          \end{figure}
+          \item Ejemplo:
+          \begin{figure}
+              \begin{minipage}[c]{0.5\textwidth}
+                  \begin{minted}[fontsize=\tiny]{python}
+                      if x < 3:
+                          print("x less than 3")
+                      elif x == 3:
+                          print("x equal to 3")
+                      else:
+                          print("x greater than 3")
+                  \end{minted}
+              \end{minipage}
+          \end{figure}
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Conceptos básicos: Bucles}
+        \begin{itemize}
+          \item Cuando se programa, es común repetir una determinada acción durante un número determinado de veces, ya sea debido a una condición dada o para procesar una colección de elementos.
+          \item En \emph{Python}, esto se lleva a cabo a través de sentencias \mintinline{python}{while} o \mintinline{python}{for}. Además, existen palabras clave para modificar su comportamiento como \mintinline{python}{break} o \mintinline{python}{continue}
+
+          \begin{figure}
+              \begin{minipage}[c]{0.5\textwidth}
+                  \begin{minted}[fontsize=\tiny]{python}
+                      while condition:
+                        ...
+
+                      for item in iterable:
+                        ...
+                  \end{minted}
+              \end{minipage}
+          \end{figure}
+          \item Ejemplo:
+          \begin{figure}
+              \begin{minipage}[c]{0.5\textwidth}
+                  \begin{minted}[fontsize=\tiny]{python}
+                  x = 1
+                  while x < 56:
+                    x *= 2
+
+                  for item in ["hello", "bye"]:
+                      print(item)
+                  \end{minted}
+              \end{minipage}
+          \end{figure}
+        \end{itemize}
     \end{frame}
 
     \begin{frame}{Caso Práctico: Recordatorios (I)}
@@ -166,69 +286,67 @@
     \end{frame}
 
     \begin{frame}[fragile]{Caso Práctico: Recordatorios (II)}
-        This is a text in the first frame.
-        \begin{figure}
-            \begin{minipage}[c]{0.7\textwidth}
-                \begin{minted}{python}
-                    message = input("What to reminder? --> ")
-                    seconds = int(input("How many seconds? --> "))
-                    reminder = [False, seconds, message]
-                    print(f"Created a reminder: {reminder}")
-                \end{minted}
-            \end{minipage}
-        \end{figure}
+        \begin{itemize}
+          \item ¿Cómo leer los recordatorios?
+            \begin{figure}
+              \begin{minipage}[c]{0.7\textwidth}
+                  \begin{minted}[fontsize=\tiny]{python}
+                      message = input("What to reminder? --> ")
+                      seconds = int(input("How many seconds? --> "))
+                      reminder = [False, seconds, message]
+                      print(f"Created a reminder: {reminder}")
+                  \end{minted}
+                \end{minipage}
+            \end{figure}
+          \item ¿Dónde almacenar los recordatorios?
+          \begin{figure}
+              \begin{minipage}[c]{0.7\textwidth}
+                  \begin{minted}[fontsize=\tiny]{python}
+                      reminders = list()
+                      reminders.append(reminder)
+                  \end{minted}
+              \end{minipage}
+          \end{figure}
+        \end{itemize}
     \end{frame}
 
-
-    \begin{frame}[fragile]{Caso Práctico: Recordatorios (II)}
-        This is a text in the first frame.
-        \begin{figure}
-            \begin{minipage}[c]{0.7\textwidth}
-                \begin{minted}{python}
-                    reminders = list()
-                    reminders.append(reminder)
-                \end{minted}
-            \end{minipage}
-        \end{figure}
+    \begin{frame}[fragile]{Caso Práctico: Recordatorios (III)}
+        \begin{itemize}
+          \item ¿Cómo mostrar los resultados?
+          \begin{figure}
+              \begin{minipage}[c]{0.7\textwidth}
+                  \begin{minted}[fontsize=\tiny]{python}
+                        print("Remainders:")
+                        print("\tCompleted\tRemaining\tMessage")
+                        for reminder in reminders:
+                            print(f"\t{reminder[0]:>8}\t{reminder[1]:>9}\t{reminder[2]}")
+                  \end{minted}
+              \end{minipage}
+          \end{figure}
+          \item ¿Cómo controlar el modo?
+          \begin{figure}
+              \begin{minipage}[c]{0.7\textwidth}
+                  \begin{minted}[fontsize=\tiny]{python}
+                      while True:
+                          command = input()
+                          if command == "q":
+                              break
+                          elif command == "a":
+                              ...
+                          elif command == "s":
+                              ...
+                  \end{minted}
+              \end{minipage}
+          \end{figure}
+        \end{itemize}
     \end{frame}
 
-    \begin{frame}[fragile]{Caso Práctico: Recordatorios (II)}
-        This is a text in the first frame.
-        \begin{figure}
-            \begin{minipage}[c]{0.7\textwidth}
-                \begin{minted}{python}
-                      print("Remainders:")
-                      print("\tCompleted\tRemaining\tMessage")
-                      for reminder in reminders:
-                          print(f"\t{reminder[0]:>8}\t{reminder[1]:>9}\t{reminder[2]}")
-                \end{minted}
-            \end{minipage}
-        \end{figure}
-    \end{frame}
-
-    \begin{frame}[fragile]{Caso Práctico: Recordatorios (II)}
-        This is a text in the first frame.
-        \begin{figure}
-            \begin{minipage}[c]{0.7\textwidth}
-                \begin{minted}{python}
-                    while True:
-                        command = input()
-                        if command == "q":
-                            break
-                        elif command == "a":
-                            ...
-                        elif command == "s":
-                            ...
-                \end{minted}
-            \end{minipage}
-        \end{figure}
-    \end{frame}
-
-    \begin{frame}[fragile]{Python Sample}
-        This is a text in the first frame.
+    \begin{frame}[fragile]{Caso Práctico: Recordatorios (III)}
+      \begin{itemize}
+        \item La apliación completa tiene la siguiente forma:
         \begin{figure}
             \begin{minipage}[c]{\textwidth}
-                \begin{minted}{python}
+                \begin{minted}[fontsize=\tiny]{python}
                 reminders = list()
                 while True:
                     command = input()
@@ -257,6 +375,7 @@
                 \end{minted}
             \end{minipage}
         \end{figure}
+      \end{itemize}
     \end{frame}
 
     \begin{frame}

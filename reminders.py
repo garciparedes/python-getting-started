@@ -17,7 +17,7 @@ def main():
             seconds = round(time()) + int(input("How many seconds? --> "))
             reminder = [False, seconds, message]
             reminders.append(reminder)
-            print(f"Created a reminder: {reminder}")
+            print(f"Created a reminder!")
             print()
         elif command == "s":
             print("Remainders:")
